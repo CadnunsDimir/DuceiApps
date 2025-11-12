@@ -64,7 +64,7 @@ fun NewOrderScreen(
     Scaffold (
         topBar = {
             ScreenTopBar(
-                title = "Novo Pedido",
+                title = translate("new_order_topbar"),
                 navController = navController
             )
         }
@@ -80,7 +80,7 @@ fun NewOrderScreen(
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.image),
-                    contentDescription = "Dulceí Logo",
+                    contentDescription = translate("app_logo_description"),
                     modifier = Modifier
                         .size(120.dp)
                         .clip(RoundedCornerShape(10.dp))
@@ -88,12 +88,12 @@ fun NewOrderScreen(
             }
 
             Text(
-                text = "Sabor Selecionado: ${orderUiState.flavorName}"
+                text = translate("new_order_flavor_selected|${orderUiState.flavorName}")
             )
 
             if (orderUiState.amount > 0) {
                 Text(
-                    text = "Valor do Pedido: R$ ${orderUiState.orderTotalPrice}"
+                    text = translate("new_order_order_price|${orderUiState.orderTotalPrice}")
                 )
             }
 
@@ -107,7 +107,7 @@ fun NewOrderScreen(
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
                 onValueChange = { newOrderViewModel.updateAmount(it) },
-                label = { Text(text = "Digite a quantidade") },
+                label = { Text(text = translate("new_order_label_amount")) },
                 isError = isError(orderUiState, AMOUNT),
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Number
@@ -124,7 +124,7 @@ fun NewOrderScreen(
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
                 onValueChange = { newOrderViewModel.updateCellphone(it) },
-                label = { Text(text = "Celular\\Whatapp") },
+                label = { Text(text = translate("new_order_label_cellphone")) },
                 isError = isError(orderUiState, CELLPHONE)
             )
             FieldErrorMessage(orderUiState, CELLPHONE)
@@ -139,7 +139,7 @@ fun NewOrderScreen(
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
                 onValueChange = { newOrderViewModel.updateCustomerName(it) },
-                label = { Text(text = "Seu Nome") },
+                label = { Text(text = translate("new_order_label_customer_name")) },
                 isError = isError(orderUiState, CUSTOMER_NAME)
             )
             FieldErrorMessage(orderUiState, CUSTOMER_NAME)
@@ -152,7 +152,7 @@ fun NewOrderScreen(
                 singleLine = true,
                 modifier = Modifier.fillMaxWidth(),
                 onValueChange = { newOrderViewModel.updateAddressLine(it) },
-                label = { Text(text = "Endereço") },
+                label = { Text(text = translate("new_order_label_address_line")) },
                 isError = isError(orderUiState, ADDRESS_LINE)
             )
             FieldErrorMessage(orderUiState, ADDRESS_LINE)
@@ -161,6 +161,7 @@ fun NewOrderScreen(
                     .height(20.dp)
             )
             SendButton(
+                enabled = orderUiState.formValid,
                 onClick = {
                     if (orderUiState.errors.isEmpty())
                         orderService.sendNewOrder(orderUiState)

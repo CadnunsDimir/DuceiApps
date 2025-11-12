@@ -49,5 +49,14 @@ val texts = mutableListOf(
     Entry("field_text_cellphone_length", translations("telefone deve conter 11 caracteres","el teléfono debe contener 11 caracteres","phone number should have 11 chars")),
     Entry("app_logo_description", translations("Dulceí Logo", "Dulceí Logo", "Dulceí Logo")),
     Entry("home_hello", translations("Olá, $1", "Holla, $1", "Hello, $1")),
-    Entry("home_text", translations("Qual vai será sua opção de hoje?", "¿Cuál será tu elección hoy?", "What will your choice be today?"))
+    Entry("home_text", translations("Qual vai será sua opção de hoje?", "¿Cuál será tu elección hoy?", "What will your choice be today?")),
+    Entry("new_order_topbar", translations("Novo Pedido", "Nueva Solicitud", "New Order")),
+    Entry("new_order_flavor_selected", translations("Sabor Selecionado: $1", "Sabor Seleccionado: $1", "Flavor Selected: $1")),
+    Entry("new_order_order_price", translations("Valor do Pedido: R$ $1", "Valor de la Solicitud: R$ $1", "Order Price: $1")),
+    Entry("new_order_label_amount", translations("Digite a quantidade", "Digite la cantidad", "Type the amount")),
+    Entry("new_order_label_cellphone", translations("Celular\\Whatapp", "Celular\\Whatapp", "Cellphone\\Whatapp")),
+    Entry("new_order_label_customer_name", translations("Seu Nome", "Tu Nombre", "Your Name")),
+    Entry("new_order_label_address_line", translations("Endereço", "Dirección", "Address")),
+    Entry("component_send_button_label", translations("Enviar", "Enviar", "Send")),
+    Entry("component_send_button_icon_label", translations("Icone Enviar", "Icon Enviar", "Send Icon"))
 )

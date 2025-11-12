@@ -10,5 +10,6 @@ data class OrderState(
     val itemPrice: BigDecimal= BigDecimal(10),
     val cellphone: String = "",
     val orderTotalPrice: BigDecimal = BigDecimal(0),
+    val formValid: Boolean = false,
     override val errors: List<ValidationError> = mutableListOf()): IState {
 }
