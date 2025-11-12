@@ -1,6 +1,5 @@
 package io.github.cadnunsdimir.android.duceiapp.models
 
-import android.R
 import java.math.BigDecimal
 
 data class Flavor (

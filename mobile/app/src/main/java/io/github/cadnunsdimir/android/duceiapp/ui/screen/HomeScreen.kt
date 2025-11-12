@@ -16,23 +16,26 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import io.github.cadnunsdimir.android.duceiapp.AppTopBar
-import io.github.cadnunsdimir.android.duceiapp.FlavorItem
+import androidx.navigation.compose.rememberNavController
 import io.github.cadnunsdimir.android.duceiapp.R
 import io.github.cadnunsdimir.android.duceiapp.models.FakeData
+import io.github.cadnunsdimir.android.duceiapp.ui.component.FlavorItem
+import io.github.cadnunsdimir.android.duceiapp.ui.component.ScreenTopBar
+import io.github.cadnunsdimir.android.duceiapp.ui.theme.DuceiAppTheme
 
 @Composable
 fun HomeScreen(
     customerName: String,
     navController: NavController,
     modifier: Modifier = Modifier) {
-    var flavors = FakeData.flavors
+    val flavors = FakeData.flavors
 
     Scaffold (
         topBar = {
-            AppTopBar(
+            ScreenTopBar(
                 title = null,
                 navController = navController
             )
@@ -56,7 +59,7 @@ fun HomeScreen(
                 style = MaterialTheme.typography.titleLarge
             )
             Text(
-                "Qual vai sua opção de hoje?"
+                "Qual vai será sua opção de hoje?"
             )
             LazyColumn {
                 items(flavors){ f->
@@ -69,5 +72,14 @@ fun HomeScreen(
                 }
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HomePreview() {
+    val navController = rememberNavController()
+    DuceiAppTheme {
+        HomeScreen("xxx", navController)
     }
 }
