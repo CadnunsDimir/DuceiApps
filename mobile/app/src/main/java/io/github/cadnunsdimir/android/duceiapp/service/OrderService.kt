@@ -33,10 +33,10 @@ class OrderService(val context: Context) {
     private fun encodeOrder(order: OrderState): String {
         val text = "Olá, eu me chamo ${order.customerName} e gostaria de " +
                 "Solicitar ${order.amount} ${order.flavorName}. Segue abaixo meus dados de contato:\n\n" +
-                "Tel: ${order.cellphone}\n" +
-                "Endereço: ${order.addressLine}\n" +
-                "Quantidade: ${order.amount}\n" +
-                "Valor unitário: R$ ${order.itemPrice}\n" +
+                "Tel: ${order.cellphone}, \n" +
+                "Endereço: ${order.addressLine}, \n" +
+                "Quantidade: ${order.amount}, \n" +
+                "Valor unitário: R$ ${order.itemPrice}, \n" +
                 "Valor Total do Pedido: R$ ${order.orderTotalPrice}\n" +
                 "\n" +
                 "Atenciosamente,\n" +

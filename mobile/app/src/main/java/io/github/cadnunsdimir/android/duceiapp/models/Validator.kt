@@ -26,7 +26,7 @@ class Validator {
         if (!value.isEmpty()) {
             val parsedValue = value.toFloat()
             if (parsedValue < limit){
-                errorList.add(ValidationError(field , "field_text_min_value"))
+                errorList.add(ValidationError(field , "field_text_min_value|$limit"))
             }
         }
         return this
@@ -37,7 +37,7 @@ class Validator {
         if (!value.isEmpty()) {
             val parsedValue = value.toFloat()
             if (parsedValue >= limit){
-                errorList.add(ValidationError(field , "field_text_max_value"))
+                errorList.add(ValidationError(field , "field_text_max_value|$limit"))
             }
         }
         return this

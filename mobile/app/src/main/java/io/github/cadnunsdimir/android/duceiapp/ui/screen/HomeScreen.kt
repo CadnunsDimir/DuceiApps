@@ -22,6 +22,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import io.github.cadnunsdimir.android.duceiapp.R
 import io.github.cadnunsdimir.android.duceiapp.models.FakeData
+import io.github.cadnunsdimir.android.duceiapp.service.translate
 import io.github.cadnunsdimir.android.duceiapp.ui.component.FlavorItem
 import io.github.cadnunsdimir.android.duceiapp.ui.component.ScreenTopBar
 import io.github.cadnunsdimir.android.duceiapp.ui.theme.DuceiAppTheme
@@ -49,17 +50,17 @@ fun HomeScreen(
         ) {
             Image(
                 painter = painterResource(id = R.drawable.image),
-                contentDescription = "Dulceí Logo",
+                contentDescription = translate("app_logo_description"),
                 modifier = Modifier
                     .size(120.dp)
                     .clip(CircleShape)
             )
             Text(
-                text = "Olá, $customerName!",
+                text = translate("home_hello|$customerName"),
                 style = MaterialTheme.typography.titleLarge
             )
             Text(
-                "Qual vai será sua opção de hoje?"
+                translate("home_text")
             )
             LazyColumn {
                 items(flavors){ f->

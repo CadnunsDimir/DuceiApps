@@ -32,7 +32,7 @@ import io.github.cadnunsdimir.android.duceiapp.R
 import io.github.cadnunsdimir.android.duceiapp.models.FakeData
 import io.github.cadnunsdimir.android.duceiapp.models.IState
 import io.github.cadnunsdimir.android.duceiapp.service.OrderService
-import io.github.cadnunsdimir.android.duceiapp.service.TranslateFunc
+import io.github.cadnunsdimir.android.duceiapp.service.translate
 import io.github.cadnunsdimir.android.duceiapp.ui.component.ScreenTopBar
 import io.github.cadnunsdimir.android.duceiapp.ui.component.SendButton
 import io.github.cadnunsdimir.android.duceiapp.ui.theme.DuceiAppTheme
@@ -181,7 +181,7 @@ fun FieldErrorMessage(state: IState, field: String) {
         .forEach {
             Text(
                 modifier = Modifier.padding(vertical = 8.dp),
-                text = TranslateFunc(it.error),
+                text = translate(it.error),
                 color = Color.Red
             )
         }
